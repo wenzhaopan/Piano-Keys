@@ -9,7 +9,8 @@ document.querySelectorAll(".key")[6].addEventListener("click", clickedG);
 
 document.querySelectorAll(".song")[0].addEventListener("click", jingleBells);
 document.querySelectorAll(".song")[1].addEventListener("click", Mary);
-
+var maryActive=false;
+var jingleActive=false;
 
 function pause(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
@@ -25,6 +26,8 @@ var audioF = new Audio("sounds/piano_F_trimmed.mp3");
 var audioG = new Audio("sounds/piano_G_trimmed.mp3");
 
 async function Mary(){
+    if(jingleActive) return;
+    maryActive=true;
     audioE.play();
     await pause(400);
     audioD.play();
@@ -75,8 +78,10 @@ async function Mary(){
     await pause(400);
     audioC.play();
     await pause(400);
-
+    maryActive=false;
 }async function jingleBells(){
+    if(maryActive) return;
+    jingleActive=true;
     audioE.play();
     await pause(400);
     audioE.play();
@@ -175,6 +180,7 @@ async function Mary(){
     audioD.play();
     await pause(400);
     audioC.play();
+    jingleActive=false;
 }
 
 document.addEventListener("keypress", function(e){
