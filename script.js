@@ -196,7 +196,6 @@ document.addEventListener("keypress", function(e){
 function clickedA(){
     audioA.play();
 }function clickedB(){
-    alert("balls");
     audioB.play();
 }function clickedC(){
     audioC.play();
