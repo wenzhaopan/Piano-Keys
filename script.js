@@ -18,7 +18,7 @@ function pause(milliseconds) {
 
 
 var audioA = new Audio("sounds/piano_A_trimmed.mp3");
-var audioB = new Audio("sounds/piano_B_trimmed.mp3");
+var audioB = new Audio("sounds/piano_B _trimmed.mp3");
 var audioC = new Audio("sounds/piano_C_trimmed.mp3");
 var audioD = new Audio("sounds/piano_D_trimmed.mp3");
 var audioE = new Audio("sounds/piano_E_trimmed.mp3");
@@ -196,6 +196,7 @@ document.addEventListener("keypress", function(e){
 function clickedA(){
     audioA.play();
 }function clickedB(){
+    alert("balls");
     audioB.play();
 }function clickedC(){
     audioC.play();
